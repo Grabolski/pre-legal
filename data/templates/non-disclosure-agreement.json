@@ -1,0 +1,66 @@
+{
+  "id": "non-disclosure-agreement",
+  "name": "Non-Disclosure Agreement (NDA)",
+  "category": "confidentiality",
+  "description": "A mutual or one-way agreement to protect confidential information shared between parties.",
+  "jurisdiction": "General",
+  "variables": [
+    {
+      "key": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "description": "The date from which this agreement takes effect"
+    },
+    {
+      "key": "disclosing_party_name",
+      "label": "Disclosing Party Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the party sharing confidential information"
+    },
+    {
+      "key": "disclosing_party_address",
+      "label": "Disclosing Party Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered or principal address of the disclosing party"
+    },
+    {
+      "key": "receiving_party_name",
+      "label": "Receiving Party Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the party receiving confidential information"
+    },
+    {
+      "key": "receiving_party_address",
+      "label": "Receiving Party Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered or principal address of the receiving party"
+    },
+    {
+      "key": "purpose",
+      "label": "Purpose of Disclosure",
+      "type": "text",
+      "required": true,
+      "description": "The specific business purpose for which confidential information is being shared"
+    },
+    {
+      "key": "confidentiality_period_years",
+      "label": "Confidentiality Period (Years)",
+      "type": "number",
+      "required": true,
+      "description": "Number of years the confidentiality obligations remain in force"
+    },
+    {
+      "key": "governing_law",
+      "label": "Governing Law",
+      "type": "text",
+      "required": true,
+      "description": "The jurisdiction whose laws govern this agreement (e.g. 'England and Wales')"
+    }
+  ],
+  "content": "NON-DISCLOSURE AGREEMENT\n\nThis Non-Disclosure Agreement (\"Agreement\") is entered into as of {{effective_date}} between:\n\n{{disclosing_party_name}}, having its principal place of business at {{disclosing_party_address}} (\"Disclosing Party\");\n\nand\n\n{{receiving_party_name}}, having its principal place of business at {{receiving_party_address}} (\"Receiving Party\").\n\n1. PURPOSE\n\nThe Disclosing Party wishes to disclose certain confidential information to the Receiving Party for the purpose of {{purpose}} (the \"Purpose\"). The Receiving Party agrees to receive such information subject to the terms and conditions of this Agreement.\n\n2. DEFINITION OF CONFIDENTIAL INFORMATION\n\n\"Confidential Information\" means any information or data disclosed by the Disclosing Party to the Receiving Party, whether orally, in writing, or by any other means, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure. Confidential Information includes, without limitation, business plans, financial data, trade secrets, technical information, product information, customer lists, and proprietary methodologies.\n\n3. OBLIGATIONS OF RECEIVING PARTY\n\nThe Receiving Party agrees to:\n(a) hold all Confidential Information in strict confidence;\n(b) not disclose Confidential Information to any third party without the prior written consent of the Disclosing Party;\n(c) use the Confidential Information solely for the Purpose;\n(d) protect the Confidential Information using at least the same degree of care it uses to protect its own confidential information, but in no event less than reasonable care;\n(e) limit access to the Confidential Information to those of its employees or contractors who have a need to know and who are bound by confidentiality obligations no less restrictive than those set forth herein.\n\n4. EXCLUSIONS\n\nThe obligations in Section 3 do not apply to information that:\n(a) is or becomes publicly known through no breach of this Agreement by the Receiving Party;\n(b) was rightfully known to the Receiving Party prior to disclosure without restriction;\n(c) is rightfully received by the Receiving Party from a third party without restriction;\n(d) is independently developed by the Receiving Party without use of the Confidential Information; or\n(e) is required to be disclosed by applicable law or court order, provided the Receiving Party gives prompt written notice to the Disclosing Party and cooperates with efforts to seek a protective order.\n\n5. TERM\n\nThis Agreement shall remain in effect for a period of {{confidentiality_period_years}} years from the Effective Date. The obligations of confidentiality shall survive termination of this Agreement.\n\n6. RETURN OF INFORMATION\n\nUpon written request by the Disclosing Party, the Receiving Party shall promptly return or destroy all Confidential Information and any copies thereof.\n\n7. NO LICENCE\n\nNothing in this Agreement grants the Receiving Party any rights in the Confidential Information other than the limited right to use it for the Purpose.\n\n8. GOVERNING LAW\n\nThis Agreement shall be governed by and construed in accordance with the laws of {{governing_law}}, and the parties submit to the exclusive jurisdiction of the courts of that jurisdiction.\n\n9. ENTIRE AGREEMENT\n\nThis Agreement constitutes the entire agreement between the parties with respect to its subject matter and supersedes all prior negotiations, representations, and understandings.\n\nIN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.\n\n{{disclosing_party_name}}\n\nSignature: _______________________\nName: ___________________________\nTitle: ____________________________\nDate: ____________________________\n\n{{receiving_party_name}}\n\nSignature: _______________________\nName: ___________________________\nTitle: ____________________________\nDate: ____________________________\n"
+}

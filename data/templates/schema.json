@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Legal Document Template",
+  "type": "object",
+  "required": ["id", "name", "category", "description", "variables", "content"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the template (kebab-case)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the document type"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["confidentiality", "employment", "services", "property", "corporate", "consumer"],
+      "description": "Category of legal document"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the document's purpose"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Applicable jurisdiction (e.g. 'UK', 'US', 'General')"
+    },
+    "variables": {
+      "type": "array",
+      "description": "List of placeholders used in the template content",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "type"],
+        "properties": {
+          "key": { "type": "string", "description": "Placeholder key used in content as {{key}}" },
+          "label": { "type": "string", "description": "Human-readable label shown to user" },
+          "type": { "type": "string", "enum": ["text", "date", "number", "currency", "select"] },
+          "required": { "type": "boolean", "default": true },
+          "options": { "type": "array", "items": { "type": "string" }, "description": "Options for select type" },
+          "description": { "type": "string", "description": "Helper text for the user" }
+        }
+      }
+    },
+    "content": {
+      "type": "string",
+      "description": "Full template text with {{variable_key}} placeholders"
+    }
+  }
+}

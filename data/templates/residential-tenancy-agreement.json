@@ -1,0 +1,115 @@
+{
+  "id": "residential-tenancy-agreement",
+  "name": "Residential Tenancy Agreement",
+  "category": "property",
+  "description": "A lease agreement between a landlord and tenant for the rental of residential property.",
+  "jurisdiction": "General",
+  "variables": [
+    {
+      "key": "agreement_date",
+      "label": "Agreement Date",
+      "type": "date",
+      "required": true,
+      "description": "The date this agreement is made"
+    },
+    {
+      "key": "landlord_name",
+      "label": "Landlord Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the landlord or property owner"
+    },
+    {
+      "key": "landlord_address",
+      "label": "Landlord Address",
+      "type": "text",
+      "required": true,
+      "description": "Correspondence address of the landlord"
+    },
+    {
+      "key": "tenant_name",
+      "label": "Tenant Name(s)",
+      "type": "text",
+      "required": true,
+      "description": "Full name(s) of the tenant(s)"
+    },
+    {
+      "key": "property_address",
+      "label": "Property Address",
+      "type": "text",
+      "required": true,
+      "description": "Full address of the rental property"
+    },
+    {
+      "key": "tenancy_start_date",
+      "label": "Tenancy Start Date",
+      "type": "date",
+      "required": true,
+      "description": "The date the tenancy begins"
+    },
+    {
+      "key": "tenancy_end_date",
+      "label": "Tenancy End Date",
+      "type": "date",
+      "required": false,
+      "description": "The end date of the fixed term (leave blank for periodic tenancy)"
+    },
+    {
+      "key": "monthly_rent",
+      "label": "Monthly Rent",
+      "type": "currency",
+      "required": true,
+      "description": "The monthly rent amount"
+    },
+    {
+      "key": "currency",
+      "label": "Currency",
+      "type": "text",
+      "required": true,
+      "description": "Currency for rent payments (e.g. GBP, USD, EUR)"
+    },
+    {
+      "key": "rent_due_day",
+      "label": "Rent Due Day of Month",
+      "type": "number",
+      "required": true,
+      "description": "Day of each month on which rent is due (e.g. 1 for the 1st)"
+    },
+    {
+      "key": "security_deposit",
+      "label": "Security Deposit Amount",
+      "type": "currency",
+      "required": true,
+      "description": "The security deposit amount payable at the start of the tenancy"
+    },
+    {
+      "key": "deposit_scheme",
+      "label": "Deposit Protection Scheme",
+      "type": "text",
+      "required": false,
+      "description": "Name of the tenancy deposit protection scheme where applicable"
+    },
+    {
+      "key": "notice_period_months",
+      "label": "Notice Period (Months)",
+      "type": "number",
+      "required": true,
+      "description": "Months of written notice required to terminate (after any fixed term)"
+    },
+    {
+      "key": "permitted_occupants",
+      "label": "Permitted Occupants",
+      "type": "text",
+      "required": false,
+      "description": "Names of any additional permitted occupants (other than the tenant)"
+    },
+    {
+      "key": "governing_law",
+      "label": "Governing Law",
+      "type": "text",
+      "required": true,
+      "description": "Jurisdiction whose laws govern this agreement"
+    }
+  ],
+  "content": "RESIDENTIAL TENANCY AGREEMENT\n\nThis Tenancy Agreement (\"Agreement\") is made on {{agreement_date}} between:\n\n{{landlord_name}}, of {{landlord_address}} (\"Landlord\");\n\nand\n\n{{tenant_name}} (\"Tenant\").\n\n1. THE PROPERTY\n\n1.1 The Landlord agrees to let, and the Tenant agrees to take, the residential property at {{property_address}} (the \"Property\") subject to the terms of this Agreement.\n\n2. TERM\n\n2.1 The tenancy shall commence on {{tenancy_start_date}} and shall continue until {{tenancy_end_date}} (\"Fixed Term\"), after which it shall continue as a periodic tenancy on the same terms unless terminated in accordance with this Agreement.\n\n3. RENT\n\n3.1 The Tenant shall pay rent of {{monthly_rent}} {{currency}} per calendar month, in advance on the {{rent_due_day}} day of each month.\n\n3.2 Rent shall be paid by bank transfer to the account details notified by the Landlord from time to time.\n\n4. DEPOSIT\n\n4.1 The Tenant shall pay a security deposit of {{security_deposit}} {{currency}} upon signing this Agreement. The deposit shall be held in accordance with applicable tenancy deposit legislation and registered with {{deposit_scheme}} where required by law.\n\n4.2 The deposit shall be returned to the Tenant within the period required by law following the end of the tenancy, less any lawful deductions for unpaid rent or damage beyond fair wear and tear.\n\n5. TENANT'S OBLIGATIONS\n\n5.1 The Tenant agrees to:\n(a) pay rent and all utility bills on time;\n(b) keep the Property in a clean and tidy condition and report any damage to the Landlord promptly;\n(c) not sub-let or assign the tenancy without the Landlord's prior written consent;\n(d) not make structural alterations or redecorate without written consent;\n(e) allow the Landlord reasonable access to inspect the Property with at least 24 hours' notice;\n(f) not use the Property for any illegal or immoral purpose;\n(g) comply with any obligations placed on occupiers under applicable law.\n\n5.2 Only the following persons may occupy the Property as their only or principal residence: {{tenant_name}}{{permitted_occupants}}.\n\n6. LANDLORD'S OBLIGATIONS\n\n6.1 The Landlord agrees to:\n(a) ensure the Property is fit for human habitation at the start of the tenancy;\n(b) carry out necessary repairs to the structure, exterior, and essential services of the Property;\n(c) comply with all applicable landlord licensing, safety, and regulatory requirements.\n\n7. TERMINATION\n\n7.1 After the Fixed Term has expired, either party may terminate this Agreement by giving the other at least {{notice_period_months}} month(s)' written notice.\n\n7.2 The Landlord may seek possession during or after the Fixed Term in accordance with the procedures and grounds permitted by applicable law.\n\n8. GOVERNING LAW\n\nThis Agreement shall be governed by and construed in accordance with the laws of {{governing_law}}.\n\n9. ENTIRE AGREEMENT\n\nThis Agreement sets out the entire agreement between the Landlord and Tenant relating to the tenancy of the Property.\n\nSIGNED by the Landlord {{landlord_name}}:\n\nSignature: _______________________\nDate: ____________________________\n\nSIGNED by the Tenant {{tenant_name}}:\n\nSignature: _______________________\nDate: ____________________________\n"
+}

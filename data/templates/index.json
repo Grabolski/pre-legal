@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "description": "Dataset of legal document templates for the Pre-Legal platform",
+  "templates": [
+    {
+      "id": "non-disclosure-agreement",
+      "name": "Non-Disclosure Agreement (NDA)",
+      "category": "confidentiality",
+      "description": "A mutual or one-way agreement to protect confidential information shared between parties.",
+      "file": "non-disclosure-agreement.json"
+    },
+    {
+      "id": "employment-contract",
+      "name": "Employment Contract",
+      "category": "employment",
+      "description": "A standard contract of employment setting out terms and conditions between an employer and employee.",
+      "file": "employment-contract.json"
+    },
+    {
+      "id": "service-agreement",
+      "name": "Service Agreement",
+      "category": "services",
+      "description": "A contract between a service provider and a client defining scope of work, deliverables, and payment terms.",
+      "file": "service-agreement.json"
+    },
+    {
+      "id": "residential-tenancy-agreement",
+      "name": "Residential Tenancy Agreement",
+      "category": "property",
+      "description": "A lease agreement between a landlord and tenant for the rental of residential property.",
+      "file": "residential-tenancy-agreement.json"
+    },
+    {
+      "id": "terms-of-service",
+      "name": "Terms of Service",
+      "category": "consumer",
+      "description": "Website or application terms of service governing how users may access and use a product or platform.",
+      "file": "terms-of-service.json"
+    }
+  ]
+}

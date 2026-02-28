@@ -1,0 +1,66 @@
+{
+  "id": "terms-of-service",
+  "name": "Terms of Service",
+  "category": "consumer",
+  "description": "Website or application terms of service governing how users may access and use a product or platform.",
+  "jurisdiction": "General",
+  "variables": [
+    {
+      "key": "company_name",
+      "label": "Company Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the company operating the service"
+    },
+    {
+      "key": "company_address",
+      "label": "Company Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered address of the company"
+    },
+    {
+      "key": "service_name",
+      "label": "Service / Product Name",
+      "type": "text",
+      "required": true,
+      "description": "The name of the website, app, or service these terms govern"
+    },
+    {
+      "key": "service_url",
+      "label": "Service URL",
+      "type": "text",
+      "required": false,
+      "description": "The URL of the website or service (e.g. https://example.com)"
+    },
+    {
+      "key": "contact_email",
+      "label": "Contact Email",
+      "type": "text",
+      "required": true,
+      "description": "Email address users can use to contact the company"
+    },
+    {
+      "key": "minimum_age",
+      "label": "Minimum User Age",
+      "type": "number",
+      "required": true,
+      "description": "Minimum age required to use the service (typically 13, 16, or 18)"
+    },
+    {
+      "key": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "description": "Date from which these terms are effective"
+    },
+    {
+      "key": "governing_law",
+      "label": "Governing Law",
+      "type": "text",
+      "required": true,
+      "description": "Jurisdiction whose laws govern these terms"
+    }
+  ],
+  "content": "TERMS OF SERVICE\n\nLast updated: {{effective_date}}\n\nWelcome to {{service_name}}. These Terms of Service (\"Terms\") govern your access to and use of {{service_name}} (\"Service\") operated by {{company_name}}, registered at {{company_address}} (\"we\", \"us\", \"our\").\n\nBy accessing or using the Service, you agree to be bound by these Terms. If you do not agree, please do not use the Service.\n\n1. ELIGIBILITY\n\n1.1 You must be at least {{minimum_age}} years of age to use the Service. By using the Service, you represent and warrant that you meet this requirement.\n\n1.2 If you are using the Service on behalf of an organisation, you represent that you have authority to bind that organisation to these Terms.\n\n2. YOUR ACCOUNT\n\n2.1 You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.\n\n2.2 You agree to notify us immediately at {{contact_email}} if you become aware of any unauthorised use of your account.\n\n2.3 We reserve the right to suspend or terminate accounts that violate these Terms.\n\n3. ACCEPTABLE USE\n\n3.1 You agree not to:\n(a) use the Service for any unlawful purpose or in violation of any applicable law;\n(b) infringe the intellectual property or other rights of any third party;\n(c) transmit any harmful, offensive, or unauthorised content;\n(d) attempt to gain unauthorised access to any part of the Service or its related systems;\n(e) use automated means to access or scrape the Service without our prior written consent;\n(f) interfere with or disrupt the integrity or performance of the Service.\n\n4. INTELLECTUAL PROPERTY\n\n4.1 All content and materials on the Service, including text, graphics, logos, and software, are owned by or licensed to us and are protected by applicable intellectual property laws.\n\n4.2 We grant you a limited, non-exclusive, non-transferable licence to access and use the Service for your personal or internal business purposes in accordance with these Terms.\n\n4.3 Content you submit or upload to the Service remains your property. You grant us a worldwide, royalty-free licence to use, host, and display such content solely to provide the Service.\n\n5. PRIVACY\n\n5.1 Our use of your personal data is governed by our Privacy Policy, which forms part of these Terms. By using the Service you consent to the practices described therein.\n\n6. DISCLAIMERS\n\n6.1 The Service is provided on an \"as is\" and \"as available\" basis without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.\n\n6.2 We do not warrant that the Service will be uninterrupted, error-free, or free of viruses or other harmful components.\n\n7. LIMITATION OF LIABILITY\n\n7.1 To the fullest extent permitted by law, {{company_name}} shall not be liable for any indirect, incidental, consequential, or punitive damages arising from your use of or inability to use the Service.\n\n7.2 Our total liability for any claim arising from these Terms shall not exceed the greater of the amount you paid us in the 12 months preceding the claim or £100 (or equivalent in local currency).\n\n8. INDEMNIFICATION\n\n8.1 You agree to indemnify and hold harmless {{company_name}} and its officers, directors, and employees from any claims, damages, or expenses (including legal fees) arising from your use of the Service or breach of these Terms.\n\n9. CHANGES TO TERMS\n\n9.1 We may update these Terms from time to time. We will notify you of material changes by posting the updated Terms on the Service or by email. Continued use of the Service after the effective date of the revised Terms constitutes acceptance.\n\n10. TERMINATION\n\n10.1 We may suspend or terminate your access to the Service at any time, with or without cause or notice, if we believe you have violated these Terms.\n\n10.2 You may stop using the Service at any time. Provisions that by their nature should survive termination shall do so.\n\n11. GOVERNING LAW\n\n11.1 These Terms shall be governed by and construed in accordance with the laws of {{governing_law}}. Any disputes shall be subject to the exclusive jurisdiction of the courts of that jurisdiction.\n\n12. CONTACT\n\nIf you have any questions about these Terms, please contact us at {{contact_email}}.\n\n{{company_name}}\n{{company_address}}\n"
+}

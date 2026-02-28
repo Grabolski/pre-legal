@@ -1,0 +1,116 @@
+{
+  "id": "employment-contract",
+  "name": "Employment Contract",
+  "category": "employment",
+  "description": "A standard contract of employment setting out terms and conditions between an employer and employee.",
+  "jurisdiction": "General",
+  "variables": [
+    {
+      "key": "employer_name",
+      "label": "Employer Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the employing organisation"
+    },
+    {
+      "key": "employer_address",
+      "label": "Employer Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered address of the employer"
+    },
+    {
+      "key": "employee_name",
+      "label": "Employee Name",
+      "type": "text",
+      "required": true,
+      "description": "Full name of the employee"
+    },
+    {
+      "key": "employee_address",
+      "label": "Employee Address",
+      "type": "text",
+      "required": true,
+      "description": "Home address of the employee"
+    },
+    {
+      "key": "job_title",
+      "label": "Job Title",
+      "type": "text",
+      "required": true,
+      "description": "The employee's job title or role"
+    },
+    {
+      "key": "start_date",
+      "label": "Start Date",
+      "type": "date",
+      "required": true,
+      "description": "The date employment begins"
+    },
+    {
+      "key": "place_of_work",
+      "label": "Place of Work",
+      "type": "text",
+      "required": true,
+      "description": "The primary location where the employee will work"
+    },
+    {
+      "key": "annual_salary",
+      "label": "Annual Salary",
+      "type": "currency",
+      "required": true,
+      "description": "Gross annual salary in the agreed currency"
+    },
+    {
+      "key": "currency",
+      "label": "Currency",
+      "type": "text",
+      "required": true,
+      "description": "Currency for compensation (e.g. GBP, USD, EUR)"
+    },
+    {
+      "key": "pay_frequency",
+      "label": "Pay Frequency",
+      "type": "select",
+      "required": true,
+      "options": ["weekly", "fortnightly", "monthly"],
+      "description": "How often the employee is paid"
+    },
+    {
+      "key": "working_hours_per_week",
+      "label": "Working Hours Per Week",
+      "type": "number",
+      "required": true,
+      "description": "Standard number of working hours per week"
+    },
+    {
+      "key": "annual_leave_days",
+      "label": "Annual Leave (Days)",
+      "type": "number",
+      "required": true,
+      "description": "Number of paid annual leave days per year (excluding public holidays)"
+    },
+    {
+      "key": "notice_period_weeks",
+      "label": "Notice Period (Weeks)",
+      "type": "number",
+      "required": true,
+      "description": "Weeks of notice required by either party to terminate employment"
+    },
+    {
+      "key": "probation_period_months",
+      "label": "Probation Period (Months)",
+      "type": "number",
+      "required": true,
+      "description": "Length of the probationary period in months (enter 0 for none)"
+    },
+    {
+      "key": "governing_law",
+      "label": "Governing Law",
+      "type": "text",
+      "required": true,
+      "description": "The jurisdiction whose employment laws govern this contract"
+    }
+  ],
+  "content": "CONTRACT OF EMPLOYMENT\n\nThis Contract of Employment (\"Contract\") is entered into between:\n\n{{employer_name}}, registered at {{employer_address}} (\"Employer\");\n\nand\n\n{{employee_name}}, of {{employee_address}} (\"Employee\").\n\n1. COMMENCEMENT AND JOB TITLE\n\n1.1 The Employee's employment with the Employer shall commence on {{start_date}}.\n\n1.2 The Employee is engaged as {{job_title}}. The Employer reserves the right to reasonably vary the Employee's duties from time to time in line with business needs.\n\n2. PLACE OF WORK\n\n2.1 The Employee's normal place of work is {{place_of_work}}. The Employer may require the Employee to work at other locations from time to time.\n\n3. HOURS OF WORK\n\n3.1 The Employee's normal working hours are {{working_hours_per_week}} hours per week. The Employer may require reasonable additional hours as necessary for the proper performance of duties.\n\n4. REMUNERATION\n\n4.1 The Employee shall be paid a gross annual salary of {{annual_salary}} {{currency}}, paid {{pay_frequency}} in arrears, subject to applicable tax and statutory deductions.\n\n4.2 Salary will be reviewed annually at the Employer's discretion. A review does not guarantee an increase.\n\n5. ANNUAL LEAVE\n\n5.1 The Employee is entitled to {{annual_leave_days}} days of paid annual leave per year (in addition to public holidays), accruing pro-rata during the first year of employment.\n\n5.2 Annual leave must be taken in the leave year in which it is accrued. Unused leave may not ordinarily be carried forward without written approval from the Employer.\n\n6. PROBATIONARY PERIOD\n\n6.1 The Employee's employment is subject to the satisfactory completion of a probationary period of {{probation_period_months}} months commencing on the start date. During this period, either party may terminate employment with one week's written notice.\n\n6.2 The Employer may extend the probationary period if performance or conduct requires it.\n\n7. NOTICE\n\n7.1 Following the successful completion of the probationary period, either party may terminate this Contract by giving {{notice_period_weeks}} weeks' written notice to the other.\n\n7.2 The Employer reserves the right to make a payment in lieu of notice.\n\n8. CONFIDENTIALITY\n\n8.1 The Employee must not, during or after employment, disclose confidential information relating to the Employer, its clients, customers, or business affairs to any third party without prior written consent.\n\n9. INTELLECTUAL PROPERTY\n\n9.1 Any intellectual property created by the Employee in the course of their employment shall vest in and belong to the Employer.\n\n10. DISCIPLINARY AND GRIEVANCE PROCEDURES\n\n10.1 The Employer's disciplinary and grievance procedures, as amended from time to time, apply to this Contract and are available from HR.\n\n11. GOVERNING LAW\n\n11.1 This Contract shall be governed by and construed in accordance with the employment laws of {{governing_law}}.\n\n12. ENTIRE AGREEMENT\n\n12.1 This Contract, together with any policies referred to herein, constitutes the entire agreement between the parties regarding the employment relationship and supersedes all previous agreements.\n\nSIGNED on behalf of {{employer_name}}:\n\nSignature: _______________________\nName: ___________________________\nTitle: ____________________________\nDate: ____________________________\n\nSIGNED by the Employee {{employee_name}}:\n\nSignature: _______________________\nDate: ____________________________\n"
+}

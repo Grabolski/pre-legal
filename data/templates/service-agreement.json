@@ -1,0 +1,116 @@
+{
+  "id": "service-agreement",
+  "name": "Service Agreement",
+  "category": "services",
+  "description": "A contract between a service provider and a client defining the scope of work, deliverables, payment terms, and other conditions.",
+  "jurisdiction": "General",
+  "variables": [
+    {
+      "key": "effective_date",
+      "label": "Effective Date",
+      "type": "date",
+      "required": true,
+      "description": "The date the agreement comes into effect"
+    },
+    {
+      "key": "provider_name",
+      "label": "Service Provider Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the service provider"
+    },
+    {
+      "key": "provider_address",
+      "label": "Service Provider Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered or business address of the service provider"
+    },
+    {
+      "key": "client_name",
+      "label": "Client Name",
+      "type": "text",
+      "required": true,
+      "description": "Full legal name of the client"
+    },
+    {
+      "key": "client_address",
+      "label": "Client Address",
+      "type": "text",
+      "required": true,
+      "description": "Registered or business address of the client"
+    },
+    {
+      "key": "services_description",
+      "label": "Description of Services",
+      "type": "text",
+      "required": true,
+      "description": "Detailed description of the services to be provided"
+    },
+    {
+      "key": "deliverables",
+      "label": "Deliverables",
+      "type": "text",
+      "required": true,
+      "description": "Specific outputs or deliverables the provider will produce"
+    },
+    {
+      "key": "start_date",
+      "label": "Start Date",
+      "type": "date",
+      "required": true,
+      "description": "Date on which services commence"
+    },
+    {
+      "key": "end_date",
+      "label": "End Date",
+      "type": "date",
+      "required": false,
+      "description": "Date on which services are expected to conclude (leave blank for ongoing)"
+    },
+    {
+      "key": "fee_amount",
+      "label": "Fee Amount",
+      "type": "currency",
+      "required": true,
+      "description": "The total or periodic fee for the services"
+    },
+    {
+      "key": "currency",
+      "label": "Currency",
+      "type": "text",
+      "required": true,
+      "description": "Currency for payment (e.g. GBP, USD, EUR)"
+    },
+    {
+      "key": "fee_type",
+      "label": "Fee Type",
+      "type": "select",
+      "required": true,
+      "options": ["fixed", "hourly", "monthly retainer"],
+      "description": "How the fee is structured"
+    },
+    {
+      "key": "payment_due_days",
+      "label": "Payment Due (Days)",
+      "type": "number",
+      "required": true,
+      "description": "Number of days after invoice within which payment is due"
+    },
+    {
+      "key": "notice_period_days",
+      "label": "Termination Notice Period (Days)",
+      "type": "number",
+      "required": true,
+      "description": "Number of days written notice required to terminate the agreement"
+    },
+    {
+      "key": "governing_law",
+      "label": "Governing Law",
+      "type": "text",
+      "required": true,
+      "description": "Jurisdiction whose laws govern this agreement"
+    }
+  ],
+  "content": "SERVICE AGREEMENT\n\nThis Service Agreement (\"Agreement\") is entered into as of {{effective_date}} between:\n\n{{provider_name}}, with a principal place of business at {{provider_address}} (\"Service Provider\");\n\nand\n\n{{client_name}}, with a principal place of business at {{client_address}} (\"Client\").\n\n1. SERVICES\n\n1.1 The Service Provider agrees to provide the following services to the Client (the \"Services\"):\n\n{{services_description}}\n\n1.2 The Service Provider shall produce the following deliverables:\n\n{{deliverables}}\n\n2. TERM\n\n2.1 This Agreement shall commence on {{start_date}} and, unless earlier terminated in accordance with this Agreement, shall continue until {{end_date}}.\n\n3. FEES AND PAYMENT\n\n3.1 In consideration for the Services, the Client shall pay the Service Provider a {{fee_type}} fee of {{fee_amount}} {{currency}}.\n\n3.2 The Service Provider shall issue invoices in accordance with the fee type agreed. All invoices are due and payable within {{payment_due_days}} days of the invoice date.\n\n3.3 Late payments shall accrue interest at the statutory rate applicable under {{governing_law}} from the due date until actual payment.\n\n4. RELATIONSHIP OF THE PARTIES\n\n4.1 The Service Provider is an independent contractor. Nothing in this Agreement creates or implies an employment, partnership, joint venture, or agency relationship between the parties.\n\n5. CONFIDENTIALITY\n\n5.1 Each party agrees to keep confidential all non-public information received from the other party and to use such information only for the purposes of this Agreement.\n\n6. INTELLECTUAL PROPERTY\n\n6.1 Subject to full payment of all fees, all intellectual property rights in the deliverables produced specifically for the Client under this Agreement shall be assigned to the Client upon delivery.\n\n6.2 The Service Provider retains all rights in pre-existing materials, tools, and methodologies used in the delivery of the Services.\n\n7. WARRANTIES\n\n7.1 The Service Provider warrants that the Services will be performed with reasonable skill and care.\n\n7.2 The Client warrants that it has the authority to enter into this Agreement and that any information or materials it provides to the Service Provider are accurate and do not infringe third-party rights.\n\n8. LIMITATION OF LIABILITY\n\n8.1 Neither party shall be liable for indirect, incidental, or consequential loss arising from this Agreement.\n\n8.2 The Service Provider's total liability under this Agreement shall not exceed the total fees paid or payable by the Client in the three months prior to the event giving rise to the claim.\n\n9. TERMINATION\n\n9.1 Either party may terminate this Agreement for convenience by giving {{notice_period_days}} days' written notice to the other party.\n\n9.2 Either party may terminate this Agreement immediately upon written notice if the other party materially breaches this Agreement and fails to remedy such breach within 14 days of receiving written notice of the breach.\n\n10. GOVERNING LAW\n\nThis Agreement shall be governed by and construed in accordance with the laws of {{governing_law}}, and the parties submit to the exclusive jurisdiction of the courts of that jurisdiction.\n\n11. ENTIRE AGREEMENT\n\nThis Agreement constitutes the entire agreement between the parties with respect to its subject matter and supersedes all prior agreements and understandings.\n\nSIGNED by {{provider_name}}:\n\nSignature: _______________________\nName: ___________________________\nTitle: ____________________________\nDate: ____________________________\n\nSIGNED by {{client_name}}:\n\nSignature: _______________________\nName: ___________________________\nTitle: ____________________________\nDate: ____________________________\n"
+}
