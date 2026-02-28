@@ -15,6 +15,7 @@ develop-eggs/
 .installed.cfg
 lib/
 lib64/
+!frontend/**/lib/
 .eggs/
 
 # Virtual environments

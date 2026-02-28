@@ -10,6 +10,13 @@
       "file": "non-disclosure-agreement.json"
     },
     {
+      "id": "mutual-non-disclosure-agreement",
+      "name": "Mutual Non-Disclosure Agreement",
+      "category": "confidentiality",
+      "description": "A bilateral agreement where both parties share and protect each other's confidential information under symmetric obligations.",
+      "file": "mutual-non-disclosure-agreement.json"
+    },
+    {
       "id": "employment-contract",
       "name": "Employment Contract",
       "category": "employment",
