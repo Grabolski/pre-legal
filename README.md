@@ -1,2 +1,7 @@
 # pre-legal
-A plattform for Drafting common legal agreements
+
+A platform for drafting common legal agreements.
+
+## Status
+
+> **Work in Progress** — This project is currently under active development and is expected to be completed by **2026-03-07**.
