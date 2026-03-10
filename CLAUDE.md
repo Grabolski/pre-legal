@@ -4,7 +4,7 @@ This is a SaaS product to allow users to draft legal agreements based on templat
 
 @catalog.json
 
-Before we start: the initial implementation is a frontend-only prototype that only supports the Mutual NDA document with no AI chat.
+The current implementation has the V1 foundation in place (see Implementation Status below) but only supports the Mutual NDA document with no AI chat yet.
 
 ## Development processs
 
@@ -22,12 +22,11 @@ When instructed to build a feature:
 
 ## Technical design 
 
-The entire project should be packaged into a docker container.  
-The database should use SQLLite and be created from scratch each time the Docker container is brought up, allowing for a users table with sign up and sign in.  
-The backend should be in backend/ and be a uv project, using FastAPI.  
-The frontend should be in frontend/  
-Consider statically building the frontend and serving it via FastAPI, if that will work.   
-There should be scripts in scripts/ for:  
+The entire project is packaged into a Docker container.
+The database uses SQLite and is created from scratch each time the Docker container is brought up, with a users table for sign up and sign in.
+The backend is in backend/ and is a uv project, using FastAPI.
+The frontend is in frontend/ and is statically built and served by FastAPI.
+Scripts in scripts/ start and stop the container:
 ```bash
 # Mac
 scripts/start-mac.sh    # Start
@@ -41,7 +40,7 @@ scripts/stop-linux.sh
 scripts/start-windows.ps1
 scripts/stop-windows.ps1
 ```
-Backend available at http://localhost:8000
+Backend (and frontend) available at http://localhost:8000
 
 ## Color Scheme
 - Accent Yellow: #ecad0a
@@ -49,3 +48,24 @@ Backend available at http://localhost:8000
 - Purple Secondary: #753991 (submit buttons)
 - Dark Navy: #032147 (headings)
 - Gray Text: #888888
+
+## Implementation Status
+
+### Completed
+
+**PL-3 – Mutual NDA prototype**
+- Next.js frontend with live form + document preview for the Mutual NDA
+- Client-side PDF generation via jsPDF
+- FastAPI backend serving template JSON from `data/templates/`
+
+**PL-4 – V1 foundation**
+- Multi-stage Dockerfile + docker-compose.yml; single container on port 8000
+- Backend migrated to uv project (`pyproject.toml`); SQLite DB with `users` table (recreated fresh on each container start)
+- JWT auth: `POST /auth/signup` and `POST /auth/signin` (bcrypt + python-jose)
+- Next.js static export served by FastAPI; `/signup` and `/signin` pages added
+- Backend test suite: 16 tests covering auth and templates
+
+### Not yet implemented
+- AI chat for document field population
+- Auth enforcement (routes are currently unprotected)
+- Support for documents beyond Mutual NDA
