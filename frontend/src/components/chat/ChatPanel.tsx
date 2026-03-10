@@ -12,10 +12,18 @@ interface Props {
 export default function ChatPanel({ messages, isLoading, onSend }: Props) {
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
+
+  // Refocus the input field whenever loading finishes
+  useEffect(() => {
+    if (!isLoading) {
+      inputRef.current?.focus();
+    }
+  }, [isLoading]);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -64,6 +72,7 @@ export default function ChatPanel({ messages, isLoading, onSend }: Props) {
       {/* Input area */}
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
+          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
