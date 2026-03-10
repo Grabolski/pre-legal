@@ -4,7 +4,7 @@ This is a SaaS product to allow users to draft legal agreements based on templat
 
 @catalog.json
 
-The current implementation has the V1 foundation in place (see Implementation Status below) but only supports the Mutual NDA document with no AI chat yet.
+The current implementation supports the Mutual NDA document with an AI chat interface for field population.
 
 ## Development processs
 
@@ -65,7 +65,13 @@ Backend (and frontend) available at http://localhost:8000
 - Next.js static export served by FastAPI; `/signup` and `/signin` pages added
 - Backend test suite: 16 tests covering auth and templates
 
+**PL-5 – AI chat for Mutual NDA**
+- Freeform AI chat replaces the static form on the NDA creation page; original form accessible via "Fill manually" toggle
+- `POST /chat` endpoint: LiteLLM → OpenRouter → Cerebras (`gpt-oss-120b`) with structured output returning `reply` + `extracted_fields`
+- Extracted field values auto-populate the live document preview in real time
+- `docker-compose.yml` passes `OPENROUTER_API_KEY` via `env_file`
+- Backend test suite: 30 tests (14 new covering chat service and endpoint)
+
 ### Not yet implemented
-- AI chat for document field population
 - Auth enforcement (routes are currently unprotected)
 - Support for documents beyond Mutual NDA
