@@ -4,7 +4,7 @@ This is a SaaS product to allow users to draft legal agreements based on templat
 
 @catalog.json
 
-The current implementation supports the Mutual NDA document with an AI chat interface for field population.
+The current implementation supports all six document types in `data/templates/` with an AI chat interface for field population.
 
 ## Development processs
 
@@ -72,6 +72,12 @@ Backend (and frontend) available at http://localhost:8000
 - `docker-compose.yml` passes `OPENROUTER_API_KEY` via `env_file`
 - Backend test suite: 30 tests (14 new covering chat service and endpoint)
 
+**PL-6 – Expand to all supported legal document types**
+- Home page dynamically lists all 6 templates from `/templates/` API with category badges
+- Generic dynamic route `/create/[templateId]` handles all document types; uses `MutualNdaPreview` for the Mutual NDA and `GenericPreview` (live `{{variable}}` substitution) for the other five
+- AI system prompt enforces follow-up questions until all fields are filled; gracefully handles requests for unsupported document types
+- Chat input auto-refocuses after each AI response
+- Backend test suite: 40 tests (10 new covering all-template parametrised coverage and system-prompt behaviour)
+
 ### Not yet implemented
 - Auth enforcement (routes are currently unprotected)
-- Support for documents beyond Mutual NDA
