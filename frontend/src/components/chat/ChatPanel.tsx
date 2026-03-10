@@ -69,7 +69,7 @@ export default function ChatPanel({ messages, isLoading, onSend }: Props) {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your message…"
           disabled={isLoading}
-          className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#209dd7] disabled:bg-gray-50 disabled:text-gray-400"
+          className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#209dd7] disabled:bg-gray-50 disabled:text-gray-400"
         />
         <button
           type="submit"
