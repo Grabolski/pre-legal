@@ -7,46 +7,53 @@ import { formatDisplayValues } from "@/lib/interpolate";
 import { sendChatMessage, ChatMessage } from "@/lib/chat";
 import TemplateForm from "@/components/form/TemplateForm";
 import MutualNdaPreview from "@/components/preview/MutualNdaPreview";
+import GenericPreview from "@/components/preview/GenericPreview";
 import DownloadButton from "@/components/ui/DownloadButton";
 import ChatPanel from "@/components/chat/ChatPanel";
 
-const TEMPLATE_ID = "mutual-non-disclosure-agreement";
+interface Props {
+  templateId: string;
+}
 
-// Shown to the user on load; filtered out before sending to the API
-// so the LLM only sees messages it actually generated.
-const INITIAL_MESSAGE: ChatMessage = {
-  role: "assistant",
-  content:
-    "Hi! I'm here to help you draft a Mutual Non-Disclosure Agreement. Let's start with the parties involved — what are the full legal names of the two parties entering this agreement?",
-};
+function makeInitialMessage(templateName: string): ChatMessage {
+  return {
+    role: "assistant",
+    content: `Hi! I'm here to help you draft a ${templateName}. Let's get started — what details would you like to use for this document?`,
+  };
+}
 
-export default function MutualNdaPage() {
+export default function CreateDocumentPage({ templateId }: Props) {
   const [template, setTemplate] = useState<Template | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [formValues, setFormValues] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isChatLoading, setIsChatLoading] = useState(false);
   const [chatError, setChatError] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
 
-  // Ref keeps current messages available inside async callbacks without
-  // adding messages to the useCallback dependency array.
+  // initialMessageRef holds the synthetic greeting so we can filter it from API calls
+  const initialMessageRef = useRef<ChatMessage | null>(null);
+
+  // Ref keeps current messages available inside async callbacks
   const messagesRef = useRef(messages);
   useEffect(() => {
     messagesRef.current = messages;
   }, [messages]);
 
   useEffect(() => {
-    fetchTemplate(TEMPLATE_ID)
+    fetchTemplate(templateId)
       .then((t) => {
         setTemplate(t);
         const initial: Record<string, string> = {};
         t.variables.forEach((v) => (initial[v.key] = ""));
         setFormValues(initial);
+        const greeting = makeInitialMessage(t.name);
+        initialMessageRef.current = greeting;
+        setMessages([greeting]);
       })
       .catch((err) => setError(err.message));
-  }, []);
+  }, [templateId]);
 
   const handleChange = useCallback((key: string, value: string) => {
     setFormValues((prev) => ({ ...prev, [key]: value }));
@@ -61,10 +68,9 @@ export default function MutualNdaPage() {
       if (!template) return;
 
       const userMessage: ChatMessage = { role: "user", content };
-      // Skip the synthetic INITIAL_MESSAGE when sending history to the API:
-      // the LLM should only see messages it actually generated.
+      // Filter out the synthetic greeting before sending to the API
       const apiMessages = messagesRef.current
-        .filter((m) => m !== INITIAL_MESSAGE)
+        .filter((m) => m !== initialMessageRef.current)
         .concat(userMessage);
 
       setMessages((prev) => [...prev, userMessage]);
@@ -72,7 +78,7 @@ export default function MutualNdaPage() {
       setChatError(null);
 
       try {
-        const response = await sendChatMessage(TEMPLATE_ID, apiMessages);
+        const response = await sendChatMessage(templateId, apiMessages);
         setMessages((prev) => [
           ...prev,
           { role: "assistant", content: response.reply },
@@ -86,7 +92,7 @@ export default function MutualNdaPage() {
         setIsChatLoading(false);
       }
     },
-    [template]
+    [template, templateId]
   );
 
   const displayValues = useMemo(
@@ -118,7 +124,7 @@ export default function MutualNdaPage() {
   }
 
   const downloadProps = {
-    templateId: TEMPLATE_ID,
+    templateId,
     displayValues,
     rawContent: template.content,
     formValues,
@@ -190,7 +196,11 @@ export default function MutualNdaPage() {
                 </span>
               </div>
               <div className="border-t border-gray-100 pt-6">
-                <MutualNdaPreview formValues={displayValues} />
+                {templateId === "mutual-non-disclosure-agreement" ? (
+                  <MutualNdaPreview formValues={displayValues} />
+                ) : (
+                  <GenericPreview content={template.content} formValues={displayValues} />
+                )}
               </div>
             </div>
           </div>

@@ -24,6 +24,18 @@ def test_build_system_prompt_includes_all_fields():
     assert TEMPLATE_NAME in prompt
 
 
+def test_build_system_prompt_requires_follow_up_until_all_filled():
+    prompt = _build_system_prompt(TEMPLATE_NAME, VARIABLES)
+    # Must instruct the LLM to keep asking until all fields are filled
+    assert "CRITICAL" in prompt or "always ask" in prompt.lower() or "every field" in prompt.lower()
+
+
+def test_build_system_prompt_handles_unsupported_document():
+    prompt = _build_system_prompt(TEMPLATE_NAME, VARIABLES)
+    # Must instruct the LLM to gracefully handle unsupported document requests
+    assert "cannot generate" in prompt or "unsupported" in prompt.lower() or "closest available" in prompt.lower()
+
+
 def test_build_system_prompt_uses_template_name():
     prompt = _build_system_prompt("Employment Contract", VARIABLES)
     assert "Employment Contract" in prompt
