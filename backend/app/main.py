@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -8,6 +9,10 @@ from fastapi.staticfiles import StaticFiles
 from app.database import init_db
 from app.routers import templates
 from app.routers import auth as auth_router
+from app.routers import chat as chat_router
+
+# Load .env so OPENROUTER_API_KEY is available
+load_dotenv(Path(__file__).parents[2] / ".env")
 
 # parents[2] from backend/app/main.py = project root (local) or /app (Docker)
 FRONTEND_OUT = Path(__file__).parents[2] / "frontend" / "out"
@@ -31,6 +36,7 @@ app.add_middleware(
 # API routers must be registered before static files mount
 app.include_router(templates.router)
 app.include_router(auth_router.router)
+app.include_router(chat_router.router)
 
 
 @app.get("/health")
